@@ -1,0 +1,147 @@
+{
+  "source_share_url": "https://docs.google.com/spreadsheets/d/1MjVBuyM_5N6VRMoUq7S_Ur0CNVKmVMuRLiUvubVnX2E/edit?usp=sharing",
+  "source_csv_url": "https://docs.google.com/spreadsheets/d/1MjVBuyM_5N6VRMoUq7S_Ur0CNVKmVMuRLiUvubVnX2E/export?format=csv&gid=1994224149",
+  "spreadsheet_id": "1MjVBuyM_5N6VRMoUq7S_Ur0CNVKmVMuRLiUvubVnX2E",
+  "sheet_gid": "1994224149",
+  "sheet_category": "MG",
+  "exported_at": "2026-04-23T06:47:30.336378+00:00",
+  "weapon_name": "L110",
+  "matched_weapon": {
+    "displayname": "L110",
+    "category": "MG",
+    "codename": "minimi",
+    "source_file": "MG/L110.json",
+    "ttk_file": "MG\\L110_ttk.json"
+  },
+  "summary": {
+    "weapon_name": "L110",
+    "aim_time_ms": 433,
+    "headshot_multiplier": "x1.34",
+    "headshot_multiplier_value": 1.34,
+    "bullet_velocity_mps": 780,
+    "rpm": 720,
+    "recoil_strength": 0.5,
+    "recoil_variation": 39.4,
+    "damage_by_range": [
+      {
+        "label": "<9.5m",
+        "damage": 25
+      },
+      {
+        "label": "<21.5m",
+        "damage": 25
+      },
+      {
+        "label": "<37.5m",
+        "damage": 20
+      },
+      {
+        "label": "<75m",
+        "damage": 20
+      },
+      {
+        "label": ">75m",
+        "damage": 16.7
+      }
+    ],
+    "ttk_by_range": [
+      {
+        "label": "<9.5m TTK",
+        "ttk_ms": 250
+      },
+      {
+        "label": "<21.5m TTK",
+        "ttk_ms": 250
+      },
+      {
+        "label": "<37.5m TTK",
+        "ttk_ms": 334
+      },
+      {
+        "label": "<75m TTK",
+        "ttk_ms": 334
+      },
+      {
+        "label": ">75m TTK",
+        "ttk_ms": 417
+      }
+    ]
+  },
+  "distance_ttk": [
+    {
+      "distance_m": 0,
+      "ttk_ms": 250,
+      "average_ttk_ms": 233
+    },
+    {
+      "distance_m": 9.4,
+      "ttk_ms": 250,
+      "average_ttk_ms": 233
+    },
+    {
+      "distance_m": 9.5,
+      "ttk_ms": 250,
+      "average_ttk_ms": 272
+    },
+    {
+      "distance_m": 21.4,
+      "ttk_ms": 250,
+      "average_ttk_ms": 272
+    },
+    {
+      "distance_m": 21.5,
+      "ttk_ms": 334,
+      "average_ttk_ms": 352
+    },
+    {
+      "distance_m": 37.4,
+      "ttk_ms": 334,
+      "average_ttk_ms": 352
+    },
+    {
+      "distance_m": 37.5,
+      "ttk_ms": 334,
+      "average_ttk_ms": 369
+    },
+    {
+      "distance_m": 54.9,
+      "ttk_ms": 334,
+      "average_ttk_ms": 369
+    },
+    {
+      "distance_m": 55,
+      "ttk_ms": 334,
+      "average_ttk_ms": 369
+    },
+    {
+      "distance_m": 74.9,
+      "ttk_ms": 334,
+      "average_ttk_ms": 369
+    },
+    {
+      "distance_m": 75,
+      "ttk_ms": 417,
+      "average_ttk_ms": 451
+    },
+    {
+      "distance_m": 89.9,
+      "ttk_ms": 417,
+      "average_ttk_ms": 451
+    },
+    {
+      "distance_m": 90,
+      "ttk_ms": 417,
+      "average_ttk_ms": 451
+    },
+    {
+      "distance_m": 99.9,
+      "ttk_ms": 417,
+      "average_ttk_ms": 451
+    },
+    {
+      "distance_m": 100,
+      "ttk_ms": 417,
+      "average_ttk_ms": 451
+    }
+  ]
+}

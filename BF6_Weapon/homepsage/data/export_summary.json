@@ -1,0 +1,298 @@
+{
+  "source_url": "https://sym.gg/legacy/pages/bf6/data/bf6.json",
+  "exported_at": "2026-04-23T04:06:11.392487+00:00",
+  "total_weapons": 55,
+  "categories": {
+    "AR": [
+      {
+        "codename": "g3a4",
+        "displayname": "AK4D",
+        "file": "AR\\AK4D.json"
+      },
+      {
+        "codename": "g36",
+        "displayname": "B36A4",
+        "file": "AR\\B36A4.json"
+      },
+      {
+        "codename": "6p67",
+        "displayname": "KORD 6P67",
+        "file": "AR\\KORD 6P67.json"
+      },
+      {
+        "codename": "l85a3",
+        "displayname": "L85A3",
+        "file": "AR\\L85A3.json"
+      },
+      {
+        "codename": "hk433",
+        "displayname": "M433",
+        "file": "AR\\M433.json"
+      },
+      {
+        "codename": "ace32",
+        "displayname": "NVO-228E",
+        "file": "AR\\NVO-228E.json"
+      },
+      {
+        "codename": "scarl",
+        "displayname": "SOR-556 MK2",
+        "file": "AR\\SOR-556 MK2.json"
+      },
+      {
+        "codename": "tavor7",
+        "displayname": "TR7",
+        "file": "AR\\TR7.json"
+      },
+      {
+        "codename": "vhs2",
+        "displayname": "VCR-2",
+        "file": "AR\\VCR-2.json"
+      }
+    ],
+    "Carbine": [
+      {
+        "codename": "ak205",
+        "displayname": "AK-205",
+        "file": "Carbine\\AK-205.json"
+      },
+      {
+        "codename": "msbsgrotb",
+        "displayname": "GRT-BC",
+        "file": "Carbine\\GRT-BC.json"
+      },
+      {
+        "codename": "xm7",
+        "displayname": "M277",
+        "file": "Carbine\\M277.json"
+      },
+      {
+        "codename": "hk417a2",
+        "displayname": "M417 A2",
+        "file": "Carbine\\M417 A2.json"
+      },
+      {
+        "codename": "m4a1",
+        "displayname": "M4A1",
+        "file": "Carbine\\M4A1.json"
+      },
+      {
+        "codename": "qbz192",
+        "displayname": "QBZ-192",
+        "file": "Carbine\\QBZ-192.json"
+      },
+      {
+        "codename": "sig553r",
+        "displayname": "SG 553R",
+        "file": "Carbine\\SG 553R.json"
+      },
+      {
+        "codename": "scarsc",
+        "displayname": "SOR-300SC",
+        "file": "Carbine\\SOR-300SC.json"
+      }
+    ],
+    "SMG": [
+      {
+        "codename": "scorpionevo3",
+        "displayname": "CZ3A1",
+        "file": "SMG\\CZ3A1.json"
+      },
+      {
+        "codename": "vector",
+        "displayname": "KV9",
+        "file": "SMG\\KV9.json"
+      },
+      {
+        "codename": "mp5mli",
+        "displayname": "PW5A3",
+        "file": "SMG\\PW5A3.json"
+      },
+      {
+        "codename": "mp7a2",
+        "displayname": "PW7A2",
+        "file": "SMG\\PW7A2.json"
+      },
+      {
+        "codename": "apc10",
+        "displayname": "SCW-10",
+        "file": "SMG\\SCW-10.json"
+      },
+      {
+        "codename": "mpx",
+        "displayname": "SGX",
+        "file": "SMG\\SGX.json"
+      },
+      {
+        "codename": "apdw",
+        "displayname": "SL9",
+        "file": "SMG\\SL9.json"
+      },
+      {
+        "codename": "ump40",
+        "displayname": "UMG-40",
+        "file": "SMG\\UMG-40.json"
+      },
+      {
+        "codename": "p90",
+        "displayname": "USG-90",
+        "file": "SMG\\USG-90.json"
+      }
+    ],
+    "MG": [
+      {
+        "codename": "m27iar",
+        "displayname": "DRS-IAR",
+        "file": "MG\\DRS-IAR.json"
+      },
+      {
+        "codename": "ultimax",
+        "displayname": "KTS100 MK8",
+        "file": "MG\\KTS100 MK8.json"
+      },
+      {
+        "codename": "minimi",
+        "displayname": "L110",
+        "file": "MG\\L110.json"
+      },
+      {
+        "codename": "m60e6",
+        "displayname": "M/60",
+        "file": "MG\\M_60.json"
+      },
+      {
+        "codename": "mg5",
+        "displayname": "M121 A2",
+        "file": "MG\\M121 A2.json"
+      },
+      {
+        "codename": "mg4k",
+        "displayname": "M123K",
+        "file": "MG\\M123K.json"
+      },
+      {
+        "codename": "m240l",
+        "displayname": "M240L",
+        "file": "MG\\M240L.json"
+      },
+      {
+        "codename": "m250",
+        "displayname": "M250",
+        "file": "MG\\M250.json"
+      },
+      {
+        "codename": "rpkm",
+        "displayname": "RPKM",
+        "file": "MG\\RPKM.json"
+      }
+    ],
+    "DMR": [
+      {
+        "codename": "msbsgrotcps",
+        "displayname": "GRT-CPS",
+        "file": "DMR\\GRT-CPS.json"
+      },
+      {
+        "codename": "aradmr",
+        "displayname": "LMR27",
+        "file": "DMR\\LMR27.json"
+      },
+      {
+        "codename": "m39emr",
+        "displayname": "M39 EMR",
+        "file": "DMR\\M39 EMR.json"
+      },
+      {
+        "codename": "svdm",
+        "displayname": "SVDM",
+        "file": "DMR\\SVDM.json"
+      },
+      {
+        "codename": "svch",
+        "displayname": "SVK-8.6",
+        "file": "DMR\\SVK-8.6.json"
+      }
+    ],
+    "BoltAction": [
+      {
+        "codename": "m2010esr",
+        "displayname": "M2010 ESR",
+        "file": "BoltAction\\M2010 ESR.json"
+      },
+      {
+        "codename": "minifix",
+        "displayname": "Mini Scout",
+        "file": "BoltAction\\Mini Scout.json"
+      },
+      {
+        "codename": "mrad",
+        "displayname": "PSR",
+        "file": "BoltAction\\PSR.json"
+      },
+      {
+        "codename": "sv98m",
+        "displayname": "SV-98",
+        "file": "BoltAction\\SV-98.json"
+      }
+    ],
+    "Shotgun": [
+      {
+        "codename": "185ksk",
+        "displayname": "18.5KS-K",
+        "file": "Shotgun\\18.5KS-K.json"
+      },
+      {
+        "codename": "dp12",
+        "displayname": "DB-12",
+        "file": "Shotgun\\DB-12.json"
+      },
+      {
+        "codename": "m1014",
+        "displayname": "M1014",
+        "file": "Shotgun\\M1014.json"
+      },
+      {
+        "codename": "590a1",
+        "displayname": "M87A1",
+        "file": "Shotgun\\M87A1.json"
+      }
+    ],
+    "Secondary": [
+      {
+        "codename": "fiveseven",
+        "displayname": "ES 5.7",
+        "file": "Secondary\\ES 5.7.json"
+      },
+      {
+        "codename": "g22",
+        "displayname": "GGH-22",
+        "file": "Secondary\\GGH-22.json"
+      },
+      {
+        "codename": "trr8",
+        "displayname": "M357 Trait",
+        "file": "Secondary\\M357 Trait.json"
+      },
+      {
+        "codename": "raginghunter",
+        "displayname": "M44",
+        "file": "Secondary\\M44.json"
+      },
+      {
+        "codename": "m45a1",
+        "displayname": "M45A1",
+        "file": "Secondary\\M45A1.json"
+      },
+      {
+        "codename": "m18",
+        "displayname": "P18",
+        "file": "Secondary\\P18.json"
+      },
+      {
+        "codename": "skorpion",
+        "displayname": "VZ. 61",
+        "file": "Secondary\\VZ. 61.json"
+      }
+    ]
+  }
+}

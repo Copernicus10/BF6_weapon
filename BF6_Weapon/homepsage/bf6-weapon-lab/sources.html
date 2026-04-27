@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BF6 Weapon Lab | 출처</title>
+    <meta
+      name="description"
+      content="BF6 Weapon Lab에서 사용하는 데이터 출처와 링크를 모아 보여줍니다."
+    />
+    <link rel="stylesheet" href="./assets/css/site.css" />
+  </head>
+  <body data-page="sources">
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="brand-block">
+          <p class="eyebrow">BF6 Weapon Lab</p>
+          <h1>데이터 출처</h1>
+          <p class="subtitle">
+            무기 기본 데이터, 이미지, TTK 시트, 그리고 현재 페이지가 읽는 정적 JSON 경로를 한곳에 정리했습니다.
+          </p>
+        </div>
+        <nav class="top-nav" aria-label="Primary">
+          <a class="nav-link" href="./index.html">홈</a>
+          <a class="nav-link" href="./ttk.html">TTK</a>
+          <a class="nav-link" href="./spread.html">탄퍼짐</a>
+          <a class="nav-link is-active" href="./sources.html">출처</a>
+        </nav>
+      </header>
+
+      <main class="page-content">
+        <section class="source-grid">
+          <article class="source-card">
+            <p class="eyebrow">무기 데이터</p>
+            <h2>Sym.gg BF6 JSON</h2>
+            <p class="section-note">
+              기본 무기 스탯, 데미지, 탄속, 반동, 탄퍼짐 원본 데이터입니다.
+            </p>
+            <a href="https://sym.gg/legacy/pages/bf6/data/bf6.json" target="_blank" rel="noreferrer">
+              https://sym.gg/legacy/pages/bf6/data/bf6.json
+            </a>
+          </article>
+
+          <article class="source-card">
+            <p class="eyebrow">무기 이미지</p>
+            <h2>Sym.gg BF6 Charts / Images</h2>
+            <p class="section-note">
+              무기 이미지와 차트 기준 페이지입니다. 이미지는 Sym.gg legacy 경로에서 수집합니다.
+            </p>
+            <a href="https://sym.gg/legacy/index.html?game=bf6&page=charts" target="_blank" rel="noreferrer">
+              https://sym.gg/legacy/index.html?game=bf6&page=charts
+            </a>
+          </article>
+
+          <article class="source-card">
+            <p class="eyebrow">TTK 시트</p>
+            <h2>Google Sheets</h2>
+            <p class="section-note">
+              AR, Carbine, MG, SMG TTK JSON 생성에 사용하는 공유 스프레드시트입니다.
+            </p>
+            <a
+              href="https://docs.google.com/spreadsheets/d/1MjVBuyM_5N6VRMoUq7S_Ur0CNVKmVMuRLiUvubVnX2E/edit?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://docs.google.com/spreadsheets/d/1MjVBuyM_5N6VRMoUq7S_Ur0CNVKmVMuRLiUvubVnX2E/edit?usp=sharing
+            </a>
+          </article>
+
+          <article class="source-card">
+            <p class="eyebrow">탄퍼짐 계산 공식</p>
+            <h2>배틀필드6 스프레드(탄분산) 계산 시트</h2>
+            <p class="section-note">
+              탄퍼짐 시뮬레이터의 연사 시 탄퍼짐 감소(FiringDec) 공식 출처입니다. 발사 간격마다 적용되는 프레임별 탄퍼짐 감쇠 수식을 이 시트에서 가져왔습니다.
+            </p>
+            <a
+              href="https://docs.google.com/spreadsheets/d/14ChgzaHhWJFH_rJVu-vIEjq_If9qFVFnf-_-SVNB7r0/edit"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://docs.google.com/spreadsheets/d/14ChgzaHhWJFH_rJVu-vIEjq_If9qFVFnf-_-SVNB7r0/edit
+            </a>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,225 @@
+{
+  "source_url": "https://sym.gg/legacy/pages/bf6/data/bf6.json",
+  "exported_at": "2026-04-23T04:06:11.392487+00:00",
+  "category": "Shotgun",
+  "source_class": "shotgun",
+  "codename": "590a1",
+  "displayname": "M87A1",
+  "class": "shotgun",
+  "velocity": 400.0,
+  "rof": {
+    "RoF": 1799.999,
+    "BurstRoF": 1799.999,
+    "SingleRoF": 1799.999
+  },
+  "gravity": -9.81,
+  "drag": 0.0025,
+  "mags": {
+    "MagSize": 8,
+    "NumMags": 5
+  },
+  "pellets": 16,
+  "ammo": "12ga00buck300",
+  "reload": {
+    "CustomReload": [
+      {
+        "minammo": 1,
+        "maxammo": 10,
+        "reloadtype": "Bullet reload",
+        "speed": 1.0,
+        "values": [
+          [
+            "Pre-delay",
+            "0.2666s"
+          ],
+          [
+            "1st-bullet reload",
+            "0.7s"
+          ],
+          [
+            "Bullet reload",
+            "0.7s"
+          ],
+          [
+            "Strip reload",
+            "0.0s"
+          ],
+          [
+            "Post-delay",
+            "0.2s"
+          ]
+        ]
+      },
+      {
+        "minammo": 0,
+        "maxammo": 0,
+        "reloadtype": "Bullet reload",
+        "speed": 1.0,
+        "values": [
+          [
+            "Pre-delay",
+            "1.1833s"
+          ],
+          [
+            "1st-bullet reload",
+            "0.7s"
+          ],
+          [
+            "Bullet reload",
+            "0.7s"
+          ],
+          [
+            "Strip reload",
+            "0.0s"
+          ],
+          [
+            "Post-delay",
+            "0.7666s"
+          ]
+        ]
+      }
+    ],
+    "SingleBulletReloadTime": "N/A",
+    "StripReloadTime": "N/A",
+    "FirstSingleBulletTime": "N/A",
+    "BridgeDelay": 0.0,
+    "ReloadDelay": 0.2666,
+    "PostReloadDelay": 0.2,
+    "StripClipSize": "N/A",
+    "ReloadLeft": 0.7,
+    "ReloadEmpty": "N/A",
+    "ReloadThrs": 0.9,
+    "NumBulletsReloaded": "N/A",
+    "ReloadSpeed": 1.0
+  },
+  "deploy": {
+    "DeployTime": 0.633334,
+    "UnDeployTime": 0.233334
+  },
+  "spread": {
+    "HIPStandBaseMin": 2.432,
+    "HIPStandBaseMax": 5.0,
+    "HIPStandMoveMin": 3.04,
+    "HIPStandMoveMax": 5.0,
+    "HIPCrouchBaseMin": 1.824,
+    "HIPCrouchBaseMax": 5.0,
+    "HIPCrouchMoveMin": 2.432,
+    "HIPCrouchMoveMax": 5.0,
+    "HIPProneBaseMin": 1.216,
+    "HIPProneBaseMax": 5.0,
+    "HIPProneMoveMin": 1.824,
+    "HIPProneMoveMax": 5.0,
+    "HIPBaseSpreadInc": 0.706,
+    "HIPBaseSpreadIdleTime": 1.2,
+    "HIPBaseSpreadIdleDecCoef": 0.0,
+    "HIPBaseSpreadIdleDecExp": 0.25,
+    "HIPBaseSpreadIdleDecOffset": 25.0,
+    "HIPBaseSpreadFiringDecCoef": 0.051,
+    "HIPBaseSpreadFiringDecExp": 2.5,
+    "HIPBaseSpreadFiringDecOffset": 0.331,
+    "HIPBaseSpreadNotFiringDecCoef": 0.0,
+    "HIPBaseSpreadNotFiringDecExp": 0.25,
+    "HIPBaseSpreadNotFiringDecOffset": 12.96,
+    "HIPBaseFirstShotMul": 1.0,
+    "HIPBaseSpreadDistExp": 0.5,
+    "HIPMoveSpreadInc": 0.706,
+    "HIPMoveSpreadIdleTime": 1.2,
+    "HIPMoveSpreadIdleDecCoef": 0.0,
+    "HIPMoveSpreadIdleDecExp": 0.25,
+    "HIPMoveSpreadIdleDecOffset": 25.0,
+    "HIPMoveSpreadFiringDecCoef": 0.051,
+    "HIPMoveSpreadFiringDecExp": 2.5,
+    "HIPMoveSpreadFiringDecOffset": 0.331,
+    "HIPMoveSpreadNotFiringDecCoef": 0.0,
+    "HIPMoveSpreadNotFiringDecExp": 0.25,
+    "HIPMoveSpreadNotFiringDecOffset": 12.96,
+    "HIPMoveFirstShotMul": 1.0,
+    "HIPMoveSpreadDistExp": 0.5,
+    "ADSStandBaseMin": 0.05,
+    "ADSStandBaseMax": 5.0,
+    "ADSStandMoveMin": 0.32,
+    "ADSStandMoveMax": 5.0,
+    "ADSCrouchBaseMin": 0.05,
+    "ADSCrouchBaseMax": 5.0,
+    "ADSCrouchMoveMin": 0.32,
+    "ADSCrouchMoveMax": 5.0,
+    "ADSProneBaseMin": 0.05,
+    "ADSProneBaseMax": 5.0,
+    "ADSProneMoveMin": 0.32,
+    "ADSProneMoveMax": 5.0,
+    "ADSBaseSpreadInc": 0.001,
+    "ADSBaseSpreadIdleTime": 0.4,
+    "ADSBaseSpreadIdleDecCoef": 0.0,
+    "ADSBaseSpreadIdleDecExp": 1.0,
+    "ADSBaseSpreadIdleDecOffset": 4.00364,
+    "ADSBaseSpreadFiringDecCoef": 0.0,
+    "ADSBaseSpreadFiringDecExp": 0.25,
+    "ADSBaseSpreadFiringDecOffset": 6.6,
+    "ADSBaseSpreadNotFiringDecCoef": 0.0,
+    "ADSBaseSpreadNotFiringDecExp": 0.25,
+    "ADSBaseSpreadNotFiringDecOffset": 6.6,
+    "ADSBaseFirstShotMul": 1.0,
+    "ADSBaseSpreadDistExp": 0.67,
+    "ADSMoveSpreadInc": 0.001,
+    "ADSMoveSpreadIdleTime": 0.4,
+    "ADSMoveSpreadIdleDecCoef": 0.0,
+    "ADSMoveSpreadIdleDecExp": 1.0,
+    "ADSMoveSpreadIdleDecOffset": 4.00364,
+    "ADSMoveSpreadFiringDecCoef": 0.0,
+    "ADSMoveSpreadFiringDecExp": 0.25,
+    "ADSMoveSpreadFiringDecOffset": 6.6,
+    "ADSMoveSpreadNotFiringDecCoef": 0.0,
+    "ADSMoveSpreadNotFiringDecExp": 0.25,
+    "ADSMoveSpreadNotFiringDecOffset": 6.6,
+    "ADSMoveFirstShotMul": 1.0,
+    "ADSMoveSpreadDistExp": 0.67,
+    "HIPRecoilDirection": -10.0,
+    "HIPRecoilAmount": 3.0,
+    "HIPRecoilAmountMultiplier": 0.94,
+    "HIPRecoilAmountMultiplierExponent": -3,
+    "HIPRecoilDirectionVariation": 12.0,
+    "HIPRecoilDirectionVariationMultiplier": 0.920371,
+    "HIPRecoilDirectionVariationMultiplierExponent": 0,
+    "HIPRecoilDecreaseNorm": 1.0,
+    "HIPRecoilDecreaseExponent": 0.6,
+    "HIPRecoilDecreaseTimeExponent": 4.0,
+    "HIPRecoilDecreaseOffset": 0.06,
+    "HIPRecoilDuration": 0.025,
+    "HIPRecoilDecreaseFactor": 70.0,
+    "HIPShootingRecoilDecreaseScale": 1.0,
+    "ADSRecoilDirection": -10.0,
+    "ADSRecoilAmount": 3.0,
+    "ADSRecoilAmountMultiplier": 0.94,
+    "ADSRecoilAmountMultiplierExponent": -3,
+    "ADSRecoilDirectionVariation": 12.0,
+    "ADSRecoilDirectionVariationMultiplier": 0.920371,
+    "ADSRecoilDirectionVariationMultiplierExponent": 0,
+    "ADSRecoilDecreaseNorm": 1.0,
+    "ADSRecoilDecreaseExponent": 0.6,
+    "ADSRecoilDecreaseTimeExponent": 4.0,
+    "ADSRecoilDecreaseOffset": 0.06,
+    "ADSRecoilDuration": 0.025,
+    "ADSRecoilDecreaseFactor": 70.0,
+    "ADSShootingRecoilDecreaseScale": 1.0
+  },
+  "damage": {
+    "dmgs": [
+      8.4,
+      8.4,
+      7.2,
+      7.2,
+      5.6,
+      5.6,
+      3.8
+    ],
+    "dists": [
+      0.0,
+      8.0,
+      9.0,
+      15.0,
+      16.0,
+      30.0,
+      31.0
+    ]
+  }
+}

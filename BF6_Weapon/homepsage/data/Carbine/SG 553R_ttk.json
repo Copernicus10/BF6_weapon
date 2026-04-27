@@ -1,0 +1,71 @@
+{
+  "source_share_url": "https://docs.google.com/spreadsheets/d/1MjVBuyM_5N6VRMoUq7S_Ur0CNVKmVMuRLiUvubVnX2E/edit?usp=sharing",
+  "source_csv_url": "https://docs.google.com/spreadsheets/d/1MjVBuyM_5N6VRMoUq7S_Ur0CNVKmVMuRLiUvubVnX2E/export?format=csv&gid=1740585242",
+  "spreadsheet_id": "1MjVBuyM_5N6VRMoUq7S_Ur0CNVKmVMuRLiUvubVnX2E",
+  "sheet_gid": "1740585242",
+  "sheet_category": "Carbine",
+  "exported_at": "2026-04-23T06:47:30.336378+00:00",
+  "weapon_name": "SG 553R",
+  "matched_weapon": {
+    "displayname": "SG 553R",
+    "category": "Carbine",
+    "codename": "sig553r",
+    "source_file": "Carbine/SG 553R.json",
+    "ttk_file": "Carbine\\SG 553R_ttk.json"
+  },
+  "summary": {
+    "weapon_name": "SG 553R",
+    "aim_time_ms": 200,
+    "headshot_multiplier": "x1.34",
+    "headshot_multiplier_value": 1.34,
+    "bullet_velocity_mps": 519,
+    "rpm": 720,
+    "recoil_strength": 0.8,
+    "recoil_variation": 33.8,
+    "damage_by_range": [
+      {
+        "label": "<9.5m",
+        "damage": 33.5
+      },
+      {
+        "label": "<21.5m",
+        "damage": 25
+      },
+      {
+        "label": "<37.5m",
+        "damage": 20
+      },
+      {
+        "label": "<75m",
+        "damage": 16.7
+      },
+      {
+        "label": ">75m",
+        "damage": 14.3
+      }
+    ],
+    "ttk_by_range": [
+      {
+        "label": "<9.5m TTK",
+        "ttk_ms": 167
+      },
+      {
+        "label": "<21.5m TTK",
+        "ttk_ms": 250
+      },
+      {
+        "label": "<37.5m TTK",
+        "ttk_ms": 334
+      },
+      {
+        "label": "<75m TTK",
+        "ttk_ms": 417
+      },
+      {
+        "label": ">75m TTK",
+        "ttk_ms": 500
+      }
+    ]
+  },
+  "distance_ttk": []
+}

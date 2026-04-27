@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BF6 Weapon Lab | TTK 표</title>
+    <meta
+      name="description"
+      content="Google Sheet에서 생성한 Battlefield 6 무기 TTK 데이터를 표로 비교합니다."
+    />
+    <link rel="stylesheet" href="./assets/css/site.css" />
+  </head>
+  <body data-page="ttk">
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="brand-block">
+          <p class="eyebrow">BF6 Weapon Lab</p>
+          <h1>TTK 표</h1>
+        </div>
+        <nav class="top-nav" aria-label="Primary">
+          <a class="nav-link" href="./index.html">홈</a>
+          <a class="nav-link is-active" href="./ttk.html">TTK</a>
+          <a class="nav-link" href="./spread.html">탄퍼짐</a>
+          <a class="nav-link" href="./sources.html">출처</a>
+        </nav>
+      </header>
+
+      <main class="page-content">
+        <section class="filter-card">
+          <div class="filter-card-head">
+            <div>
+              <p class="eyebrow">무기 필터</p>
+              <h2>표에 표시할 무기 선택</h2>
+            </div>
+            <div class="filter-summary">
+              <span class="filter-count">
+                표시 무기 <strong id="ttkWeaponCount">-</strong>
+              </span>
+              <p id="ttkStatus" class="section-note">TTK 표 데이터를 불러오는 중입니다...</p>
+            </div>
+          </div>
+          <div id="ttkFilterGroups" class="ttk-filter-groups" aria-live="polite"></div>
+        </section>
+
+        <section class="table-card">
+          <div class="table-card-head">
+            <div>
+              <p class="eyebrow">표 보기</p>
+              <h2>무기 TTK 비교표</h2>
+            </div>
+            <p id="ttkSortHint" class="section-note">정렬 기준을 준비 중입니다.</p>
+          </div>
+          <div class="ttk-table-wrap">
+            <table class="ttk-table">
+              <thead id="ttkTableHead"></thead>
+              <tbody id="ttkTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./assets/js/ttk.js"></script>
+  </body>
+</html>
