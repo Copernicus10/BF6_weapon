@@ -129,6 +129,84 @@ export function getDamageAtDistance(weapon, distance) {
   return resolvedDamage;
 }
 
+export function getTtkFromSheetAtDistance(ttkPayload, distance) {
+  const numericDistance = Number(distance);
+  const distanceRows = ttkPayload?.distance_ttk;
+
+  if (Number.isFinite(numericDistance) && Array.isArray(distanceRows) && distanceRows.length > 0) {
+    const exactRow = distanceRows.find((entry) => Number(entry.distance_m) === numericDistance);
+    if (exactRow) {
+      return {
+        distance: numericDistance,
+        ttkMs: Number(exactRow.ttk_ms),
+        bulletsToKill: null,
+        fromSheet: true,
+        sourceDistance: Number(exactRow.distance_m),
+      };
+    }
+
+    // The home card labels 9.5m spreadsheet rows as 10m for UI display.
+    const roundedRow = distanceRows.find((entry) => Math.round(Number(entry.distance_m)) === numericDistance);
+    if (roundedRow) {
+      return {
+        distance: numericDistance,
+        ttkMs: Number(roundedRow.ttk_ms),
+        bulletsToKill: null,
+        fromSheet: true,
+        sourceDistance: Number(roundedRow.distance_m),
+      };
+    }
+  }
+
+  // Fallback for older payloads that only expose summary.ttk_by_range labels.
+  const ranges = ttkPayload?.summary?.ttk_by_range;
+  if (!Array.isArray(ranges) || ranges.length === 0) {
+    return null;
+  }
+
+  // Some sheet exports only keep summary buckets like "<9.5m TTK".
+  // The home card displays that breakpoint as "10m", so map rounded labels first.
+  for (const entry of ranges) {
+    const label = String(entry.label ?? "");
+    const ltMatch = label.match(/^<([\d.]+)m/);
+    if (!ltMatch) {
+      continue;
+    }
+
+    const upperBound = Number(ltMatch[1]);
+    if (Math.round(upperBound) === numericDistance && upperBound <= numericDistance) {
+      return {
+        distance: numericDistance,
+        ttkMs: Number(entry.ttk_ms),
+        bulletsToKill: null,
+        fromSheet: true,
+        sourceDistance: upperBound,
+      };
+    }
+  }
+
+  let prevBound = 0;
+  for (const entry of ranges) {
+    const label = String(entry.label ?? "");
+    const ltMatch = label.match(/^<([\d.]+)m/);
+    const gtMatch = label.match(/^>([\d.]+)m/);
+
+    if (ltMatch) {
+      const upperBound = Number(ltMatch[1]);
+      if (numericDistance >= prevBound && numericDistance < upperBound) {
+        return { distance: numericDistance, ttkMs: Number(entry.ttk_ms), bulletsToKill: null, fromSheet: true };
+      }
+      prevBound = upperBound;
+    } else if (gtMatch) {
+      const lowerBound = Number(gtMatch[1]);
+      if (numericDistance >= lowerBound) {
+        return { distance: numericDistance, ttkMs: Number(entry.ttk_ms), bulletsToKill: null, fromSheet: true };
+      }
+    }
+  }
+  return null;
+}
+
 export function computeTtkAtDistance(weapon, distance) {
   const rpm = Number(weapon.rof?.RoF);
   const damage = getDamageAtDistance(weapon, distance);

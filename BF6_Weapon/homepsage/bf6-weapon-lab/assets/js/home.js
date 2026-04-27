@@ -1,7 +1,6 @@
 import {
   HOME_CLASSES,
   buildPictureHtml,
-  computeTtkAtDistance,
   escapeHtml,
   fetchManifest,
   fetchWeaponByFile,
@@ -10,16 +9,57 @@ import {
   resolveEffectiveSpreadInputs,
 } from "./shared.js";
 
-const RECOIL_AMOUNT_MAX = 2.0;
-const RECOIL_VARIATION_MAX = 50;
-
 const statusEl = document.getElementById("homeStatus");
 const sectionsEl = document.getElementById("homeSections");
 const visibleCountEl = document.getElementById("visibleWeaponCount");
 
-function buildRecoilBar(value, max, modifierClass) {
-  const pct = Math.min(100, (value / max) * 100).toFixed(1);
-  return `<div class="stat-bar-track"><div class="stat-bar-fill ${modifierClass}" style="width:${pct}%"></div></div>`;
+function buildRecoilFanSvg(direction, variation) {
+  const RAD = Math.PI / 180;
+  const width = 110;
+  const height = 66;
+  const cx = width / 2;
+  const cy = height - 2;
+  const radius = 52;
+
+  const centerDeg = -90 + direction;
+  const fanStart = Math.max(-180, centerDeg - variation);
+  const fanEnd = Math.min(0, centerDeg + variation);
+
+  const toXY = (deg, r = radius) => [
+    cx + r * Math.cos(deg * RAD),
+    cy + r * Math.sin(deg * RAD),
+  ];
+  const pt = (deg, r = radius) => toXY(deg, r).map((value) => value.toFixed(2)).join(",");
+
+  const bgPath = `M ${cx},${cy} L ${pt(-180)} A ${radius},${radius} 0 0,1 ${pt(0)} Z`;
+  const fanPath =
+    `M ${cx},${cy} L ${pt(fanStart)} ` +
+    `A ${radius},${radius} 0 ${fanEnd - fanStart > 180 ? 1 : 0},1 ${pt(fanEnd)} Z`;
+
+  const [lineX, lineY] = toXY(centerDeg, radius - 5);
+  const [dotX, dotY] = toXY(centerDeg, radius);
+
+  const tickLine = (deg) => {
+    const [x1, y1] = toXY(deg, radius);
+    const [x2, y2] = toXY(deg, radius - 6);
+    return `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>`;
+  };
+
+  const topY = cy - radius + 10;
+  const edgeY = cy - 4;
+
+  return `<svg class="recoil-fan-svg" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+    <path d="${bgPath}" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.13)" stroke-width="0.6"/>
+    <path d="${fanPath}" fill="rgba(255,150,50,0.28)" stroke="rgba(255,150,50,0.7)" stroke-width="0.8"/>
+    ${tickLine(-180)} ${tickLine(-90)} ${tickLine(0)}
+    <line x1="${cx}" y1="${cy}" x2="${lineX.toFixed(2)}" y2="${lineY.toFixed(2)}"
+          stroke="#ffaa30" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="${dotX.toFixed(2)}" cy="${dotY.toFixed(2)}" r="2.4" fill="#ffaa30"/>
+    <circle cx="${cx}" cy="${cy}" r="2" fill="rgba(255,255,255,0.35)"/>
+    <text x="${cx}" y="${topY}" font-size="6" fill="rgba(255,255,255,0.3)" text-anchor="middle">0°</text>
+    <text x="6" y="${edgeY}" font-size="5.5" fill="rgba(255,255,255,0.2)" text-anchor="start">-90°</text>
+    <text x="${width - 6}" y="${edgeY}" font-size="5.5" fill="rgba(255,255,255,0.2)" text-anchor="end">+90°</text>
+  </svg>`;
 }
 
 async function buildWeaponCard(category, item) {
@@ -29,13 +69,8 @@ async function buildWeaponCard(category, item) {
   const velocity = Number(weapon.velocity);
   const rpm = Number(weapon.rof?.RoF);
   const magSize = Number(weapon.mags?.MagSize);
-
   const recoil = resolveEffectiveSpreadInputs(weapon);
-  const ttk10 = computeTtkAtDistance(weapon, 10);
-
-  const ttk10Html = ttk10
-    ? `<span class="stat-value">${formatNumber(ttk10.ttkMs, 0)} ms</span><span class="stat-sublabel">${ttk10.bulletsToKill}발</span>`
-    : `<span class="stat-value">-</span>`;
+  const fanSvg = buildRecoilFanSvg(recoil.recoilDirection, recoil.recoilVariation);
 
   return `
     <article class="weapon-card">
@@ -62,20 +97,21 @@ async function buildWeaponCard(category, item) {
         </div>
       </div>
       <div class="recoil-block">
-        <p class="eyebrow recoil-block-head">반동 · TTK</p>
-        <div class="stat-bar-row">
-          <span class="stat-bar-label">반동강도</span>
-          ${buildRecoilBar(recoil.recoilAmount, RECOIL_AMOUNT_MAX, "stat-bar-fill--recoil")}
-          <span class="stat-bar-value">${formatNumber(recoil.recoilAmount, 3)}°</span>
-        </div>
-        <div class="stat-bar-row">
-          <span class="stat-bar-label">반동변동</span>
-          ${buildRecoilBar(recoil.recoilVariation, RECOIL_VARIATION_MAX, "stat-bar-fill--variation")}
-          <span class="stat-bar-value">${formatNumber(recoil.recoilVariation, 1)}°</span>
-        </div>
-        <div class="stat-box stat-box--ttk10">
-          <span class="stat-label">TTK 10m</span>
-          <div class="ttk10-values">${ttk10Html}</div>
+        <p class="eyebrow recoil-block-head">반동</p>
+        ${fanSvg}
+        <div class="recoil-nums">
+          <div class="recoil-num-item">
+            <span class="stat-label">방향</span>
+            <span class="stat-value">${formatNumber(recoil.recoilDirection, 1)}°</span>
+          </div>
+          <div class="recoil-num-item">
+            <span class="stat-label">강도</span>
+            <span class="stat-value">${formatNumber(recoil.recoilAmount, 3)}°</span>
+          </div>
+          <div class="recoil-num-item">
+            <span class="stat-label">변동</span>
+            <span class="stat-value">±${formatNumber(recoil.recoilVariation, 1)}°</span>
+          </div>
         </div>
       </div>
     </article>
@@ -91,9 +127,7 @@ async function renderCategorySection(manifest, category) {
         <div>
           <p class="eyebrow">${category}</p>
           <h2>${category} Weapons</h2>
-          <p class="section-note">
-            반동강도 · 반동변동은 ADS 기준 유효값이며, TTK 10m는 무기 데이터에서 직접 계산합니다.
-          </p>
+          <p class="section-note">Home cards show base weapon stats and ADS recoil info.</p>
         </div>
         <div class="meta-chip">
           <span class="meta-value">${items.length}</span>
@@ -116,9 +150,9 @@ async function init() {
 
     sectionsEl.innerHTML = sections.join("");
     visibleCountEl.textContent = String(weaponCount);
-    statusEl.textContent = "무기 카드의 반동강도·반동변동은 ADS 유효 반동값 기준이며, TTK 10m는 sym.gg 데이터로 직접 계산합니다.";
+    statusEl.textContent = "Home cards show weapon stats and ADS recoil info.";
   } catch (error) {
-    statusEl.textContent = `메인 페이지 초기화 실패: ${error.message}`;
+    statusEl.textContent = `Main page init failed: ${error.message}`;
     statusEl.classList.add("is-error");
   }
 }

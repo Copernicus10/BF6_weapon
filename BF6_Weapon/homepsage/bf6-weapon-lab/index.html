@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>BF6 Weapon Lab | 홈</title>
+    <title>BF6 Weapon Lab | Home</title>
     <meta
       name="description"
-      content="Battlefield 6 무기 카드와 Google Sheet 기반 TTK 데이터를 보여주는 페이지입니다."
+      content="Battlefield 6 weapon cards with base stats and ADS recoil information."
     />
     <link rel="stylesheet" href="./assets/css/site.css" />
   </head>
@@ -17,15 +17,14 @@
           <p class="eyebrow">BF6 Weapon Lab</p>
           <h1>Battlefield 6 Weapon Charts</h1>
           <p class="subtitle">
-            홈 카드의 TTK 영역은 Google Sheet에서 생성한 <code>모델명_ttk.json</code>만 사용합니다.
-            시트 데이터가 없는 무기는 빈값으로 남겨두며, 예전 계산 TTK는 더 이상 사용하지 않습니다.
+            Home cards now focus on weapon basics and ADS recoil. TTK is no longer shown on this page.
           </p>
         </div>
         <nav class="top-nav" aria-label="Primary">
-          <a class="nav-link is-active" href="./index.html">홈</a>
+          <a class="nav-link is-active" href="./index.html">Home</a>
           <a class="nav-link" href="./ttk.html">TTK</a>
-          <a class="nav-link" href="./spread.html">탄퍼짐</a>
-          <a class="nav-link" href="./sources.html">출처</a>
+          <a class="nav-link" href="./spread.html">Spread</a>
+          <a class="nav-link" href="./sources.html">Sources</a>
         </nav>
       </header>
 
@@ -35,23 +34,23 @@
             <p class="hero-label">Weapon Stats</p>
             <h2>AR / Carbine / SMG / MG</h2>
             <p>
-              무기 카드에는 이미지, RPM, 탄속, 장탄수와 함께 ADS 기준 반동강도·반동변동 바 차트와 TTK 10m가 표시됩니다.
-              모든 수치는 sym.gg에서 수집한 <code>homepsage/data</code> JSON 데이터를 직접 계산합니다.
+              Weapon cards show image, RPM, velocity, magazine size, and ADS recoil direction and variation.
+              Data is read from the JSON files under <code>homepsage/data</code>.
             </p>
           </div>
           <div class="hero-meta">
             <div class="meta-chip">
               <span class="meta-value">4</span>
-              <span class="meta-label">표시 계열</span>
+              <span class="meta-label">Classes</span>
             </div>
             <div class="meta-chip">
               <span class="meta-value" id="visibleWeaponCount">-</span>
-              <span class="meta-label">표시 무기</span>
+              <span class="meta-label">Weapons</span>
             </div>
           </div>
         </section>
 
-        <section id="homeStatus" class="status-banner">무기 데이터를 불러오는 중입니다...</section>
+        <section id="homeStatus" class="status-banner">Loading weapon cards...</section>
         <section id="homeSections" class="weapon-sections" aria-live="polite"></section>
       </main>
     </div>

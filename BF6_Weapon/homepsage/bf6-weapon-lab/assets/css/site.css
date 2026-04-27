@@ -379,45 +379,23 @@ img {
   margin: 0 0 2px;
 }
 
-.stat-bar-row {
+.recoil-fan-svg {
+  width: 100%;
+  display: block;
+}
+
+.recoil-nums {
   display: grid;
-  grid-template-columns: 56px 1fr 48px;
-  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-top: -4px;
+}
+
+.recoil-num-item {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-}
-
-.stat-bar-label {
-  font-size: 0.76rem;
-  color: var(--muted);
-  text-align: right;
-  white-space: nowrap;
-}
-
-.stat-bar-track {
-  height: 7px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  overflow: hidden;
-}
-
-.stat-bar-fill {
-  height: 100%;
-  border-radius: 999px;
-}
-
-.stat-bar-fill--recoil {
-  background: linear-gradient(90deg, #b4ff47 0%, #7cdb1e 100%);
-}
-
-.stat-bar-fill--variation {
-  background: linear-gradient(90deg, #ffa347 0%, #ff6132 100%);
-}
-
-.stat-bar-value {
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-align: right;
-  color: var(--text);
+  gap: 1px;
 }
 
 .stat-box--ttk10 {
