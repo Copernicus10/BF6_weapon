@@ -21,7 +21,8 @@ function buildRecoilFanSvg(direction, variation) {
   const cy = height - 2;
   const radius = 52;
 
-  const centerDeg = -90 + direction;
+  // 홈 부채꼴 기준: 음수 방향은 오른쪽, 양수 방향은 왼쪽
+  const centerDeg = -90 - direction;
   const fanStart = Math.max(-180, centerDeg - variation);
   const fanEnd = Math.min(0, centerDeg + variation);
 
@@ -88,11 +89,11 @@ async function buildWeaponCard(category, item) {
           <span class="stat-value">${formatNumber(rpm, 0)}</span>
         </div>
         <div class="stat-box">
-          <span class="stat-label">Velocity</span>
+          <span class="stat-label">탄속</span>
           <span class="stat-value">${formatNumber(velocity, 0)} m/s</span>
         </div>
         <div class="stat-box">
-          <span class="stat-label">Magazine</span>
+          <span class="stat-label">장탄수</span>
           <span class="stat-value">${formatNumber(magSize, 0)}</span>
         </div>
       </div>
@@ -126,12 +127,12 @@ async function renderCategorySection(manifest, category) {
       <div class="class-section-header">
         <div>
           <p class="eyebrow">${category}</p>
-          <h2>${category} Weapons</h2>
-          <p class="section-note">Home cards show base weapon stats and ADS recoil info.</p>
+          <h2>${category} 무기</h2>
+          <p class="section-note">홈 카드에는 기본 무기 정보와 ADS 기준 반동 정보가 표시됩니다.</p>
         </div>
         <div class="meta-chip">
           <span class="meta-value">${items.length}</span>
-          <span class="meta-label">Weapons</span>
+          <span class="meta-label">무기</span>
         </div>
       </div>
       <div class="weapon-grid">${cards.join("")}</div>
@@ -150,9 +151,9 @@ async function init() {
 
     sectionsEl.innerHTML = sections.join("");
     visibleCountEl.textContent = String(weaponCount);
-    statusEl.textContent = "Home cards show weapon stats and ADS recoil info.";
+    statusEl.textContent = "홈 카드에는 무기 기본 정보와 ADS 기준 반동 정보가 표시됩니다.";
   } catch (error) {
-    statusEl.textContent = `Main page init failed: ${error.message}`;
+    statusEl.textContent = `홈 페이지 초기화 실패: ${error.message}`;
     statusEl.classList.add("is-error");
   }
 }
